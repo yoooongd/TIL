@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//1. dom객체 -> jquery 객체 코드 변환
+	//2. 로그인 버튼 클릭
+	//3. 어제 거
+	//4. 취키 복수 개 선택한 취미 value 같이 출력
+
+var idlist = ["java", 'oracle', 'script', 'servlet'];
+	var id = $('#id');
+	var pw1 = $('#pw1');	
+	var pw2 = $('#pw2');
+	var result = $('#result');
+	var login = $("#btn");
+	login.on("click", function(){
+		for(var i = 0; i < idlist.length; i++){
+			if(idlist[i] == id.val()){//id 찾았으면
+				if(pw1.val() == pw2.val()){//암호일치
+					inform="정상사용자입니다.";
+				}else{//암호불일치
+					inform="암호 확인하세요.";
+				}
+				break;
+			}
+			else{
+				inform="아이디리스트에 없습니다.";
+				
+			}
+		}
+
+	});
+
+	
+	var items =
+	$('input[type=checkbox]').on("click",function(){
+		for(var i=0;i<items.length;i++){
+			inform +=items.get(i).value+" ";
+		}
+		result.html(inform);
+	});
+}
+</script>
+</head>
+<body>
+<form>
+ 아이디입력:<input type=text id="id" value="aaa" ><br>
+ 암호입력:	<input type="password" id="pw1" ><br> 
+ 암호입력확인:<input type="password" id="pw2" ><br>
+ <!--<자바>:전송될 내용 >자바: 출력될 내용  -->
+ 취미(복수 개 선택 가능):
+ <input type="checkbox" name="cb1" value="JAVA">자바 
+ <input type="checkbox" name="cb2" value="하둡">Hadoop
+ <input type="checkbox" name="cb3" value="R">알
+ <input type="checkbox" name="cb4" value="Python">Python
+ <br>
+ <input id="btn" type=button value="로그인">
+</form>
+ <h3 id="result"> 여기에 결과를 출력합니다. </h3>
+</body>
+</html>

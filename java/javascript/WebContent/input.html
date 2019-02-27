@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var id = prompt("아이디 입력하세요.");
+	var confirm = confirm("20세이상입니까?");
+	document.write(id);//string
+	document.write(confirm);//boolean
+	
+	confirm=100;//number
+	document.write(confirm);
+	newvar=100;
+	document.write(newvar+"<br>");//var라는 키워드가 없지만 100 출력됨.
+
+	
+	var print = function(){//함수를 변수처럼 정의
+		//var 지역변수
+		var local = "local";
+		document.write(local+"<br>");
+		//전역 변수
+		global="global";
+		document.write(global+"<br>");
+	}
+	print();//호출
+	document.write(global+"<br>");
+	document.write(local+"<br>");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

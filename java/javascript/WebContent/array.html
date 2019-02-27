@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+var arr1=[10,'java',false, 3.14, undefined];
+var arr2= new Array(10);
+var br="<br>";
+document.write(arr1.length+br);
+document.write(arr2.length+br);
+
+arr1[5]=100;
+document.write(arr1.length+br);
+
+for(var i =0; i<arr2.length;i++){
+	arr2[i]=(i+1)*10;
+	document.write(arr2[i]+"--");
+}
+//shift + unshift, push, pop
+arr1.unshift(100);//배열 첫번째 자리 ㅈㅓ장
+arr1.shift();//배열의 첫번째 삭제
+arr1.push(1000);//배열의 마지막 저장
+arr1.pop();//배열의 마지막 삭제
+document.write(br);
+document.write(arr1.join('--'));
+/* for(var i =0; i<arr1.length;i++){
+	document.write(arr1[i]+"--");
+} */
+
+</script>
+<body>
+
+</body>
+</html>

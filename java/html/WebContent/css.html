@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css 연습</title>
+
+<style type="text/css">
+	p{
+		color:green;
+		background-color: yellow;
+		font-family: 맑은 고딕;/* 글씨체 */
+		font-size: 38px;/* px:픽셀 em:픽셀의 두 배 정도 */
+		font-style: italic;
+		font-weight: bolder;
+		/* text-decoration: line-through; */
+		text-transform: capitalize;
+		text-shadow: 5px 5px 10px #ff0000;
+		/* 글씨 기준 x축으로 5px, z축으로 5px, 선명도 5px(커질 수록 흐려짐), 색상 */
+	} 
+	#special {color:red;}  /*special이란 id를 가진 태그*/
+	.target{color:blue; text-align:center;}/* target이라는 이름을 가진 클래스만 바뀐다. */
+	h2, h3 {
+		color:navy; 
+	}
+	body > h1{color:aqua;}
+	
+	/*방문한 적이 없다= 링크 이전 */
+	a:link{
+		color:blue;
+		text-decoration: none;
+		background-color: white;
+		cursor: crosshair;
+		border-bottom: 1px solid #000000;
+	}
+	/*방문한 적이 있다= 링크 이후 */
+	a:visited{
+		color:green;
+		border-bottom: #ffffff;
+	}
+	/* 마우스를 올려놓기만 한 상태 */
+	a:hover{
+		color:red;
+		background-color: pink;
+	}
+	input[type=text] {color:aqua;}
+	input[value=자바]{color:red;}
+	
+	li{
+		list-style-type: decimal;
+		color:blue;
+		display: inline;/* 한줄로 보여주는 것 대신 decimal은 적용 안 됨. */
+	}
+	
+	body{
+	background-image: url("images/images/html5.jpg");
+	background-repeat: no-repeat;/* repeat하는게 default임 */
+	}
+	
+</style>
+</head>
+
+
+<body>
+	<!-- 웹페이지 내부에서 같은 id를 가진 문장이 여러 개이면 안된다. -->
+	<p class="target">target class 단락입니다.</p>
+	<p id="special">special=id 단락입니다.</p>
+	<p>정상적인 단락입니다.</p>
+	<h1 class="target">target class h1 단락입니다.</h1>
+<hr>	
+	
+	<h2>h2 태그입니다.</h2>
+	<h3>h3 태그입니다.</h3>
+	
+	<h1>h1 태그입니다</h1>
+	<center><h1>h1 태그입니다</h1></center>
+	
+	<a href="http://www.multicampus.com">이동합니다.</a><br>
+<br>
+	<input type=text value="text입력">
+	<input type=email value="a@b.com">
+<hr>
+<hr>	
+	<UL>
+		<li>커피</li>
+		<li>커피2</li>
+		<li>커피3</li>
+	</UL>
+	
+	<ol>
+		<li>주문</li>
+		<li>주문2</li>
+		<li>주문3</li>
+	</ol>
+	
+</body>
+</html>
+

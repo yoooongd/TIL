@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var idlist=["java","oracle","script","servlet"];
+window.onload = function() {
+btn.onclick=function(){
+		
+		//자바스크립트를 dom 객체로 변환
+		//var id = document.getElementById("id");
+		var id = document.querySelector("#id");
+		//var id = document.querySelector("input");//여러 개 있어도 첫번째거만..
+		//var idList = document.querySelectorAll("input");//여러 개 있으면 전부다.
+		
+		var pw1 = document.getElementById("pw1");
+		var pw2 = document.getElementById("pw2");
+		var result = document.getElementById("result");
+		
+		for(var i=0; i<idlist.length; i++){
+			if(id.value==idlist[i]){
+				if(pw1.value==pw2.value){
+					result.innerHTML=document.write("정상 로그인 사용자입니다.");
+				}
+				else{
+					result.innerHTML=document.write("같은 암호가 아닙니다.");
+				}
+				break;	
+			}
+			else{
+				result.innerHTML=document.write("id 형식이 틀렸습니다.");
+			}	
+		}
+	}
+}
+
+</script>
+</head>
+
+<body>
+<form>
+아이디 입력: <input type="text" id= "id"><br>
+암호입력: <input type="password" id= "pw1"><br>
+암호입력 확인: <input type="password" id= "pw2"><br>
+<input id="btn" type="button" value="로그인">
+</form>
+<h3 id="result">여기에 결과 출력</h3>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블</title>
+<style type="text/css">
+	table{
+	/* border: 두께 스타일 색상 */
+	border: 3px solid silver;
+	width: 250px;
+	text-align: center;
+	/* margin:여백 => 여백 크기로 중앙으로 옮길수 이찌
+	하지만 페이지에 내용물이 다 채워지지 않았기 때문에 숫자로 지정해주면 (100px 100px 100px 100px)
+	(top 100px right 100px bottom 100px left 100px를 의미하고 있음.)
+	같은 여백을 주지 않을 수도 있음.
+	 */
+	margin: auto;
+	
+	}
+	td, th{
+	/* 위처럼 해도 되고 아래처럼 해도 되고! 같음 */
+	border-width: 3px;
+	border-style: solid;
+	border-color: navy;
+	/* 둥글게 만들 각도. 클수록 원에 가까움 */
+	border-radius: 10px
+	}
+	img{
+	width:100px; 
+	height:100px;
+	display: block;
+	}
+	caption { caption-side:bottom; }
+	#first tr:nth-of-type(2n+1) td{
+	background-color: lime;
+	}
+	#second tr:nth-of-type(2n) td{
+	background-color: yellow;
+	}
+	h1{text-align: center;}
+</style>
+</head>
+<body>
+<h1>테이블 태그 연습</h1>
+<table id="second">
+	<tr><th>1열들</th><th>2열들</th></tr>
+	<tr><td>아이디</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td rowspan="2">로그인</td></tr>
+	<tr><td>비밀번호</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+	</table>
+<hr>
+<hr>
+<h1>로그인 창</h1>
+	<table id="first">
+	<caption>로그인화면</caption>
+	<tr><td>아이디</td><td width=70></td></tr>
+	<tr><td>비밀번호</td><td width=70></td></tr>
+	<tr><td colspan="2">로그인</td></tr>
+	</table>
+	
+<hr>
+<img src="images/images/html5.jpg">
+<img src="images/images/android.jpg">
+<img src="images/images/google.png">
+
+
+</body>
+</html>

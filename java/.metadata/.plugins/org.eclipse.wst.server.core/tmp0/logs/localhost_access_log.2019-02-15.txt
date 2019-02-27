@@ -1,0 +1,13 @@
+127.0.0.1 - - [15/Feb/2019:16:00:46 +0900] "GET / HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [15/Feb/2019:16:00:49 +0900] "GET /team/search.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [15/Feb/2019:16:00:49 +0900] "GET /favicon.ico HTTP/1.1" 404 1014
+0:0:0:0:0:0:0:1 - - [15/Feb/2019:16:00:54 +0900] "GET /team/search3?booktitle=%EC%A0%95%EC%9D%98 HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [15/Feb/2019:16:02:29 +0900] "GET /team/WEB-INF/classes/search/RServeExample.java HTTP/1.1" 404 990
+0:0:0:0:0:0:0:1 - - [15/Feb/2019:16:02:47 +0900] "GET /team/WEB-INF/classes/search/SearchText.java HTTP/1.1" 404 990
+0:0:0:0:0:0:0:1 - - [15/Feb/2019:16:02:47 +0900] "GET /favicon.ico HTTP/1.1" 404 1014
+0:0:0:0:0:0:0:1 - - [15/Feb/2019:16:58:04 +0900] "GET /favicon.ico HTTP/1.1" 404 1014
+0:0:0:0:0:0:0:1 - - [15/Feb/2019:16:58:08 +0900] "GET /team/search3?booktitle=cc HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [15/Feb/2019:16:58:27 +0900] "GET /team/WEB-INF/classes/search/SearchText.java HTTP/1.1" 404 990
+0:0:0:0:0:0:0:1 - - [15/Feb/2019:16:58:27 +0900] "GET /favicon.ico HTTP/1.1" 404 1014
+0:0:0:0:0:0:0:1 - - [15/Feb/2019:16:59:01 +0900] "GET /team/search HTTP/1.1" 200 2
+0:0:0:0:0:0:0:1 - - [15/Feb/2019:16:59:01 +0900] "GET /favicon.ico HTTP/1.1" 404 1014

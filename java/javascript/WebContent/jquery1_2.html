@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	#first {color:blue;}
+	.jquerycls{background-color:gray;}
+</style>
+
+<script src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){		
+		$("#output").html($("a").attr("href"));
+		$("a").attr("href","http://www.google.com");
+		$("#output").html($("#output").html()+">>>>>"+$("a").attr("href"));
+		$("a").removeAttr("href");//태그는 남아있고 속성만 없어짐.(여기선 링크가 사라지지!)
+		$("#output").html($("#output").html()+">>>>>"+$("a").attr("href"));//undefined 출력
+
+		//id 값 줬다면 id로 하면 돼용!
+		$("input[value=보이기]").on("click", function() {
+			 $("#first").fadeIn(4000, function () {
+					$("#output").html("보이기 완료");
+				});
+		});
+		//이벤트처리
+		//$().on("이벤트",함수(){});
+		$("input[value=감추기]").on("click", function() {
+			$("#first").fadeOut(2000, function () {
+				$("#output").html("숨기기 완료");
+			});
+		});//on end
+		
+		//id나 type으로 찾으면 고정적이기 때문에 이걸 사용하는 게 좋다.
+		//cf)first last는 가변적
+		
+		var cnt=0;//지역변수로 선언하면 계속 1밖에 안나오기 때문에 체크 불가능
+		$("input[type=text]").on("keyup", function() {
+			//키 입력: 누르다(keydown) 누른 상태(keypressed) 떼어내다(keyup)
+			$("#output").html($("input[type=text]").val()); //val() getter 용도 ~html(~) setter용도
+			cnt++;
+			$("#output").html(cnt);
+			if(cnt > 10){
+				$("#output").html("고만~~~");
+				$("input[type=text]").attr("readonly","readonly");
+			}
+		
+		});
+		
+		$("input[value=입력중단]").on("click",function(){
+			$("input[type=text]").off("keyup");//연결해제
+			
+		});
+		
+	});//ready end
+</script>
+</head>
+
+<body>
+<h1 id="first">j_query 연습</h1> 
+<h1><a class="green" href="http://www.daum.net">링크 동작 테스트 태그</a></h1><br><br>
+<input type="text" value="텍스트입력">
+<input type="button" value="입력중단"><br>
+<input type="password" value="암호 입력"><br>
+<input type="button" value="감추기">
+<input type="button" value="보이기"><br>
+<br>
+
+<h1>점심 메뉴는?</h1>
+<select>
+	<option> 한식 </option>
+	<option> 분식 </option>
+	<option selected="selected"> 중식 </option>
+	<option> 일식 </option>
+	<option> 양식 </option>
+</select>
+<h1 id="output"></h1>
+</body>
+</html>

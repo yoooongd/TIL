@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 화면</title>
+</head>
+
+<body>
+<h1>로그인 화면</h1>
+<!-- 버튼 모양
+button: 기능(자바 스크립트) 내장 x
+reset: 내장 기능 o, 클릭하면 (form 태그 내부) 이전 입력 양식 지운다.
+submit: 클릭 (form 태그 내부) action 속성 값 이동(전송)
+
+1. 입력양식제공
+2. 지정 서버(action 속성) 전송
+-->
+<form action="Login" method ="post">
+	아이디 입력: <input type="text" name ="id"><br>
+	암호 입력: <input type="password" name ="pw"><br>
+	취미(복수 개 선택 가능):
+ 	<input name="hobby" type="checkbox" value="JAVA" checked="checked">자바 
+	<input name="hobby" type="checkbox" value="하둡">Hadoop
+ 	<input name="hobby" type="checkbox" value="R" checked="checked">알
+ 	<input name="hobby" type="checkbox" value="Python">Python
+ 	
+	<input type="submit" value="로그인"><br>
+</form>
+<h1>
+<a href="Login?id=oracle&pw=aaaa">로그인 결과 출력</a>
+
+</h1>
+
+
+</body>
+
+</html>

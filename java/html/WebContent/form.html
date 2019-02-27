@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>양식태그</title>
+</head>
+<body>
+	<!-- 자바 스크립트 html 파일 내부 작성. 자바 유사 문법 + html 태그 관련 작업 -->
+	<h1>여러 가지 폼 태그들</h1>
+	<form action="loginServLet">
+	<!-- table 태그 안에는 tr, td, th 태그만 내부 포함 가능하기 때문에 form 안에 table을 넣을 수 있음.  -->
+	
+	<table border="2">
+		<!-- 키보드로 받는 것 -->
+		<tr>
+		<td>아이디입력:</td>
+		<td><input type="text" name="name" size=5 maxlength="10"
+		autofocus="autofocus"></td>
+		</tr>
+		
+		<tr>
+		<td>암호입력:</td>
+		<td><input type="password" name="pw" size=5 
+		maxlength="10" value="aaa"></td>
+		</tr>
+		
+		<!-- 마우스 클릭 -->
+		<tr>
+		<td>성별:</td>
+		<td>
+		<!--value는 나의 브라우저에서 보여주는 것이 아님!! LoginServlet에 가서 적용될 value들일 뿐-->
+		<input type="radio" name="gender" value="남">남자
+		<input type="radio" name="gender" value="여">여자
+		<!--radio type에서 단일 선택을 하려면 name 속성을 같게 해야한다. 
+		예를들어 둘 중 하나를 gender2라고 한다면 둘다 선택할 수 있다.-->
+		</td>
+		</tr>
+		
+		<tr>
+		<td>취미(복수 선택 가능):</td>
+		<td>
+		<!-- checkbox 타입은 0개 복수 개 전부 가능 -->
+		<input type="checkbox" name="hobby" value="java">java
+		<input type="checkbox" name="hobby" value="sql">sql
+		<input type="checkbox" name="hobby" value="html">html
+		<input type="checkbox" name="hobby" value="servlet">servlet
+		</td>
+		</tr>
+		
+		<tr>
+		<td>파일전송</td>
+		<td>
+		<input type="file" name="f">
+		</td>
+		</tr>
+		
+		<tr>
+		<td colspan="2">
+		<!-- 브라우저에서 입력 받는 것이아니라 자동으로 호출받는 것. 따라서 전송하는 내용을 넣으면 됨 -->
+		<input type="hidden" name="role" value="admin">
+		<input type=submit value = "로그인">
+		<input type="button" value = "로그인2">
+		<!-- submit은 지정된 action으로 가는 내장 기능이 있다.
+		반면에 button은 기능을 만들어줘야 한다. -->
+		</td>
+		</tr>
+		
+		<!-- 한 번에 보여주는 것이 5줄이라는 의미. 더 입력할 수 있음. -->
+		<tr>
+		<td colspan="2">
+		<textarea rows="5" cols="50">
+		여기에 입력하세요
+		</textarea>
+		</td>
+		</tr>
+		
+		<tr>
+		<td colspan="2">
+		<select multiple="multiple">
+			<option>짜장면</option>
+			<option selected="selected">짬뽕</option>
+			<option>군만두</option>
+			<option>팔보채</option>
+			<option>탕수육</option>
+		</select>
+		<select>
+			<option>짜장면</option>
+			<option selected="selected">짬뽕</option>
+			<option>군만두</option>
+			<option>팔보채</option>
+			<option>탕수육</option>
+		</select>
+		</td>
+		</tr>
+
+	</table>
+	</form>
+<hr>
+<hr>
+<h1>html5 추가 타입들</h1>
+<form action="HTML5Servlet">
+	색상: <input type=color value="#0000ff"><br>
+	범위: <input type="range"><br>
+	숫자: <input type="number" max=100 min=0 step=5><br>
+	이메일: <input type="email"><br>
+	홈페이지주소: <input type =url><br>
+	폰번호:<input type="tel" pattern="(010|011|016|019)-[0-9]{3,4}-[0-9]{4}"><br>
+	날짜시간:<input type="datetime-local"><br>
+	<!-- 한 번 실행되고 나면 자동완성 기능 생성됨. autocomplete기능인데, 이것은 html5에서는 기본이 on -->
+	검색어:<input type="text" name="search"><br>
+<input type="submit" value="전송">
+<input type="reset" value="입력취소">
+</form>	
+	
+	
+</body>
+<!-- <script type="text/javascript">
+alert(document.getElementById("name").value);
+
+</script> -->
+</html>

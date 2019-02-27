@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#first {color: blue;}
+	.jquerycls{
+		background-color: gray;
+	}
+</style>
+<script src = "jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//바디 완료 이루 실행 문장들 
+		//-> window.onload = function() 와 같음
+		//$("#first").css("color", "red");//id선택
+		//$("input").css("color", "red");//태그 선택
+		//$(".green").css('color', 'green');//클래스 선택
+		//css에 접근해서 컬러를 pink로 바꾸겠다
+		//$("INPUT[value ^= 암호]").css('background-color','pink');
+		//윗줄과 같음
+		//$("INPUT:TEXT").css('background-color','pink');
+		//점심 메뉴 기본 선택 : 글씨 색상 변경
+		//$('select option[selected^=sel]').css('color', "red");
+		//: 은 추출하라는 뜻 (윗줄과 같은 표현)
+		//$('select option:selected').css('color', "red");
+		
+		//h1태그에 포함되어있는 a태그 문자열 색상 green으로 바꿈
+		//$("h1 a").css("color", 'green');
+		
+		
+		//option 태그 첫번째 태그 글씨 색상 orange - eq는 순서라는 뜻
+		//eq는 0번 인덱스부터 인식 가능
+		//$("option:eq(0)").css('color', 'orange');
+		
+		//4번째 인덱스보다 작은 것들만 오렌지 색상으로 바뀜
+		// lower than
+		//$("option:lt(3)").css('color', 'orange');
+		
+		//grater than : 2번 인덱스보다 큰 것들의 색을 바꿔주세요.
+		//$("option:gt(2)").css('color', 'orange');
+		
+		//첫번째거나 마지막 거 색상 바꾸기
+		//$("option:first").css('color', 'orange');
+		//$("option:last").css('color', 'orange');
+		
+		//홀수 번호를 보여줌
+		//$("option:even").css('color', 'orange');
+		
+		//짝수 번호를 보여줌
+		//$("option:odd").css('color', 'orange');
+		
+		//class 속성 추가
+		/* setTimeout(function(){
+			$("h1, a").addClass("jquerycls");
+		}, 2000);
+		setTimeout(function(){
+			$("a").removeClass("jquerycls");
+		}, 4000); */
+		
+		//a 태그 문자열 조회 후 출력
+		//alert($('a').html()); //getter
+		
+		//option 태그 문자열 조회 후 출력
+		//$('a').html('링크문자변경'); //setter
+		
+		//alert($('a').text());
+		//$('a').text('링크문자변경'); 
+		
+		
+		// 옵션 태그의 갯수
+	/* 	for(var i = 0; i <$('option').length ; i++){
+
+			//option 태그 문자열 조희
+			//get 메소드 뒤에는 .html()을 쓸 수 없다.
+			alert($('option').get(i).innerHTML);
+		}
+		 */
+		 
+		 
+		/* $('option').each(function(index){
+			//$(this) : 현재 객체가 제이쿼리 객체가 될 수 있음 
+			alert(index + '-' + $(this).html());
+		}); */ //each()함수는 반복문 내장 함수.
+		
+/* 		alert($('input[type=text]').val());
+		$('input[type=text]').val('값변경');
+		alert($('input[type=text]').val()); */
+		
+		$('#output').html($('a').attr('href'));
+		$('a').attr("href", "http://www.google.com");
+		$('#output').html(
+				$('#output').html() + "--" +
+				$('a').attr('href'));
+		
+		$('a').removeAttr('href');
+		$("#output").html(
+				$('#output').html() + "--" +
+				$('a').attr('href'));
+		
+	});//ready end
+</script>
+</head>
+<body>
+	<h1 id = "first">jquery 연습</h1>
+	<h1>
+	<a class ="green" href="http://www.daum.net">링크동작테스트태그</a><br>
+	</h1>
+	<input type = text value="텍스트입력"><br>
+	<input type = "password" value = "암호입력"><br>
+	
+	<h1>점심 메뉴는?</h1>
+	<select>
+		<option>한식</option>
+		<option>분식</option>
+		<option selected = "selected">중식</option>
+		<option>일식</option>
+		<option>양식</option>
+	</select>
+	
+	<h1 id = "output"> </h1>
+	
+</body>
+</html>
